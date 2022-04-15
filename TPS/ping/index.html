@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+    <script src="times.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Análisis estadístico de los tiempos de RTT (Round Trip Time)</h1>
+    <p>
+      Capturar la salida de un comando 'ping' a cualquier host durante al menos
+      2 horas, y graficar su distribución en escala lineal y luego en escala
+      log-log. Entregar un pequeño informe en PDF.
+    </p>
+
+    <h2>Ejecución</h2>
+
+    <h3>Comando</h3>
+    <pre>
+      <code class="cmd">
+    $ ping google.com -c 1080 -i 10 &> ping.txt
+      </code>
+    </pre>
+
+    <h4>Flags</h4>
+    <ul>
+      <li><b>Count</b>: [-c 1080] -> Enviar 1080 paquetes</li>
+      <li><b>Interval</b>: [-i 10] -> Enviar paquetes cada 10 segundos</li>
+    </ul>
+
+    <p>1080 <i>pkg</i> · 10 <i>s/pkg</i> = 10800 <i>s</i> = 3 <i>hs</i></p>
+
+    <h3>Salida</h3>
+    <h4>ping.txt</h4>
+    <pre>
+      <code>
+    PING google.com (172.217.172.78) 56(84) bytes of data.
+    64 bytes from eze06s01-in-f14.1e100.net (172.217.172.78): icmp_seq=1 ttl=115 time=12.7 ms
+    64 bytes from eze06s01-in-f14.1e100.net (172.217.172.78): icmp_seq=2 ttl=115 time=12.3 ms
+    
+    . . .
+
+    64 bytes from eze06s01-in-f14.1e100.net (172.217.172.78): icmp_seq=1079 ttl=115 time=12.8 ms
+    64 bytes from eze06s01-in-f14.1e100.net (172.217.172.78): icmp_seq=1080 ttl=115 time=11.0 ms
+
+    --- google.com ping statistics ---
+    1080 packets transmitted, 1078 received, 0.185185% packet loss, time 10802046ms
+    rtt min/avg/max/mdev = 9.010/15.462/1326.564/40.665 ms
+      </code>
+    </pre>
+
+    <p>Salida recortada. Ver salida completa en archivo adjunto.</p>
+
+    <h2>Graficos</h2>
+
+    <p>Interactivos en formato web</p>
+
+    <h3>Lapso de tiempo</h3>
+    <div class="graph" id="time"></div>
+
+    <h3>Distribuicion</h3>
+    <div class="graph" id="graph"></div>
+
+    <h3>Distribuicion (log)</h3>
+    <div class="graph" id="log_graph"></div>
+    <p>mayor escala:</p>
+    <div class="graph" id="log_graph2"></div>
+
+    <h2>Observaciones</h2>
+
+    <ul>
+      <li>Se perdieron solo 2 paquetes</li>
+      <li>
+        Un paquete tardo mas de 1 segundo en regresar
+        <ul>
+          <li>el segundo mas lento tardo 107 ms, mucho menos</li>
+          <li>tardo ~86 veces mas que el paquete promedio</li>
+        </ul>
+      </li>
+      <li>El paquete mas rapido tardo 9.01 ms, ~0.6 veces el promedio</li>
+      <li>
+        La forma de la distribución es 'semejante' a algunas distribuciones
+        conocidas
+        <img
+          alt="distribuciones conocidas"
+          src="https://www.researchgate.net/profile/Daniel-Wolcott-3/publication/324578560/figure/fig1/AS:681302441340928@1539446568882/Examples-of-six-distributions-used-in-statistical-inference-Each-distribution-can-have-a.png"
+        />
+      </li>
+    </ul>
+
+    <h2>Adjuntos</h2>
+
+    <h3>Links</h3>
+    <p>El campus solo acepta pdf</p>
+
+    <ul>
+      <li>
+        <a
+          href="https://drive.google.com/drive/folders/190hPZlfdjNXUau9yX2WuojrgLcNaYNpN"
+          target="blank"
+          >Google Drive</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/NicolasEzequielZulaicaRivera/FIUBA_REDES/tree/master/TPS/ping"
+          target="blank"
+          >Github</a
+        >
+      </li>
+    </ul>
+
+    <h3>Archivos</h3>
+
+    <ul>
+      <li><b>ping.txt</b>: salida de la corrida</li>
+      <li><b>cleanup.js</b>: script para extraer los tiempos de la corrida</li>
+      <li>
+        <b>web</b>: archivos utilizados para armar el informe
+        <ul>
+          <li>index.html , style.css , script.js</li>
+          <li>
+            times.js ( salida de cleanup.js con los tiempos en un arreglo )
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

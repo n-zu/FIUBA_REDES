@@ -1,0 +1,22 @@
+* {
+  font-family: "Fira Code", sans-serif;
+}
+
+body {
+  padding: 1em;
+}
+
+pre {
+  background-color: #222;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.cmd {
+  color: #fff;
+}
+
+.graph {
+  display: flex;
+  justify-content: center;
+}
