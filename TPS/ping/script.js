@@ -65,6 +65,32 @@ const log_trace2 = {
 
 Plotly.newPlot("log_graph2", [log_trace2], log_layout);
 
+const loglog_trace = {
+  x: times,
+  type: "histogram",
+  xbins: {
+    end: 30,
+    size: bin_size,
+    start: 0,
+  },
+};
+
+const loglog_layout = {
+  autosize: true,
+  width: 1000,
+  height: 500,
+  yaxis: {
+    title: `Count (${times.length})`,
+    type: "log",
+  },
+  xaxis: {
+    title: "RTT (ms)",
+    type: "log",
+  },
+};
+
+Plotly.newPlot("loglog_graph", [loglog_trace], loglog_layout);
+
 const time_trace = {
   y: times,
   x: times.map((_, i) => i),
