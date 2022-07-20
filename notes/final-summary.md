@@ -1,17 +1,17 @@
 <style>
 img {
-    max-width: 800px!important;
+    max-width: 600px!important;
     text-align: center;
 }
 
 img + img {
-  padding-left: calc(50% + -400px);
+  padding-left: calc(50% + -300px);
 }
 </style>
 
-# Networking
+# Computer Networking
 
-- [Networking](#networking)
+- [Computer Networking](#computer-networking)
   - [1. Networks](#1-networks)
     - [The Internet](#the-internet)
     - [Performance Measurements](#performance-measurements)
@@ -48,6 +48,8 @@ img + img {
     - [Cryptography](#cryptography)
     - [Protocols](#protocols-2)
   - [Web Request](#web-request)
+
+<!-- pagebreak -->
 
 ## 1. Networks
 
@@ -90,6 +92,8 @@ A protocol defines:
 - Message fields (size, function, delimiters)
 - Procedure (sending and receiving)
 
+<!-- pagebreak -->
+
 ## 2. Application Layer
 
 > Network applications are the raisons d’être of a computer network
@@ -119,6 +123,8 @@ a process is identified by:
 - **DNS** (Domain Name System)
 - P2P FTP
 - Video Streaming w/ CDN
+
+<!-- pagebreak -->
 
 ## 3. Transport Layer
 
@@ -159,6 +165,8 @@ Types of flow (rdt):
 - **TCP** : Provides rdt & flow/congestion control on top of basic services.
 
 - **UDP** : Provides the minimal services.
+
+<!-- pagebreak -->
 
 ## 4. Network Layer - Data Plane
 
@@ -208,6 +216,8 @@ IPV4 Header:
 
 ```
 
+<!-- pagebreak -->
+
 ### Forwarding
 
 **Forwarding** : transferring a packet from an input to the appropriate output. Very fast (ns), implemented in hardware.
@@ -238,6 +248,8 @@ Some of these can be implemented using Generalized Forwarding
 - Firewall
 - Load Balancer
 - NAT (Network Address Translation)
+
+<!-- pagebreak -->
 
 ## 5. Network Layer - Control Plane
 
@@ -350,6 +362,8 @@ The first routers ran their routing protocol ( generating routing table )
 - DHCP (Dynamic Host Configuration Protocol)
   - DHCPDISCOVER , DHCPOFFER , DHCPREQUEST , DHCPACK
 
+<!-- pagebreak -->
+
 ## 6. Link Layer
 
 > how packets are sent across the individual links that make up the end-to-end communication path
@@ -384,20 +398,19 @@ Deterministic but limits transmission rates
 - FDM : Frequency Division Multiplexing
 - CDM : Code Division Multiplexing
 
+<!-- pagebreak -->
+
 #### Random Access
 
-- ALOHA
-- Slotted ALOHA
+- ALOHA / Slotted ALOHA
 - CSMA (Carrier Sense Multiple Access)
   - CS: Don't speak if someone else is speaking
   - CSMA/CD (Collision Detection)
     - Detects collisions
-    - thought for cabled MA, where everyone hears everything
+    - Cabled MA, where everyone hears everything
   - CSMA/CA (Collision Avoidance)
-    - In wireless connections all hosts might not hear each other (hidden agent)
-    - Access point ( who does hear everyone ) acknowledges messages
-    - There is a slot for acknowledgements
-    - works well thanks to low latency
+    - Wireless MA, hosts may not hear another (hidden agent)
+    - Access point acknowledges messages (ack slot)
     - Request to Send (RTS) / Clear to Send (CTS)
 
 #### Taking-Turns
@@ -414,7 +427,8 @@ Deterministic but limits transmission rates
 
 ### Definitions & Protocols
 
-- ## ARP (Address Resolution Protocol)
+- ARP (Address Resolution Protocol)
+  - IP to MAC
 - Ethernet
 - Wifi
   - CSMA/CA
@@ -431,6 +445,8 @@ Deterministic but limits transmission rates
     - Separated by Switches
 - MPLS (Multi Protocol Label Switching)
   - used for traffic engineering
+
+<!-- pagebreak -->
 
 ## 7. Wireless
 
@@ -508,6 +524,8 @@ and extending it was most cost effective than other alternatives ( like wifi-max
 - Handoffs / Handover
 - Rerouting
 
+<!-- pagebreak -->
+
 ### Cell Networks Internet Access
 
 Cell towers have a grid-like disposition (hexagons) where there is some overlap between coverage regions,
@@ -516,6 +534,8 @@ to avoid interference regions have 6 areas w/ different frequencies between neig
 ![]()
 ![2G Architecture](Book/img/7.18.png)
 ![3G Architecture](Book/img/7.19.png)
+
+<!-- pagebreak -->
 
 ## 8. Security
 
@@ -560,6 +580,8 @@ to avoid interference regions have 6 areas w/ different frequencies between neig
 - Certificate Authority ( CA )
 - We trust a CA to verify the authenticity of a Public Key
 
+<!-- pagebreak -->
+
 **Authentication**
 
 ```
@@ -586,20 +608,31 @@ to avoid interference regions have 6 areas w/ different frequencies between neig
 
 ![]() ![Almost SSL](Book/img/8.25.png)
 
+<!-- pagebreak -->
+
 ## Web Request
 
 - HTTP (app)
-  > Se quiere hacer un request http a cierto dominio.
-  > Necesitamos su IP ( el puerto es 80 por convención )
+  > We want to make an http request to a certain domain.
+  > We need its IP ( port 80 by convention )
 - DNS (app)
-  > Se quiere hacer un request DNS a nuestro servidor local de dns.
+  > We want to make a request to the local dns server.
   > eg. 8.8.8.8
 - UDP (transport)
-  > El request DNS se envuelve en un paquete UDP
+  > The dns request is wrapped in a udp packet
 - IP (network)
-  > El paquete UDP se envuelve en un paquete IP
+  > The udp packet is wrapped in a ip packet
 - ROUTING (network)
-  > Se routea para saber a donde enviar el paquete IP -> Gateway.
-  > Se necesita la MAC del gateway
+  > The destination is routed,
+  > it needs to be sent to the default gateway,
+  > we need its mac address
 - ARP (link)
-  > ( dst_mac : Broadcast , dst_ip : NextHop (gateway) )
+  > - dst_mac : Broadcast
+  > - dst_ip : NextHop (gateway)
+
+<!--
+PRINTING
+page size: A4
+scale: 90%
+margins: 0.25" 0.25" 0.25" 0.5"
+-->

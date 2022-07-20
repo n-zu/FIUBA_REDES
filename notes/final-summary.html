@@ -1,0 +1,1202 @@
+<!DOCTYPE html><html><head>
+      <title>final-summary</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/nico2/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  font-family: "Fira Code";
+}
+.markdown-preview.markdown-preview pre,
+.markdown-preview.markdown-preview code {
+  font-family: "Fira Code";
+}
+.markdown-preview.markdown-preview input[type="date"] {
+  float: right;
+  text-align: right;
+  border: none;
+  border-bottom: 1px solid #888;
+}
+.markdown-preview.markdown-preview h2 + input[type="date"] {
+  margin-top: -4em;
+}
+.markdown-preview.markdown-preview h3 + input[type="date"] {
+  margin-top: -3em;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5 {
+  text-decoration: underline;
+}
+.markdown-preview.markdown-preview h1 {
+  color: #338 !important;
+}
+.markdown-preview.markdown-preview h2 {
+  color: #227 !important;
+}
+.markdown-preview.markdown-preview h3 {
+  color: #116 !important;
+}
+.markdown-preview.markdown-preview h4 {
+  color: #005 !important;
+}
+.markdown-preview.markdown-preview h5,
+.markdown-preview.markdown-preview h6 {
+  font-weight: bold !important;
+}
+.markdown-preview.markdown-preview b,
+.markdown-preview.markdown-preview strong {
+  color: #449 !important;
+  font-weight: 600;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <style>
+img {
+    max-width: 600px!important;
+    text-align: center;
+}
+
+img + img {
+  padding-left: calc(50% + -300px);
+}
+</style>
+<h1 class="mume-header" id="computer-networking">Computer Networking</h1>
+
+<ul>
+<li><a href="#computer-networking">Computer Networking</a>
+<ul>
+<li><a href="#1-networks">1. Networks</a>
+<ul>
+<li><a href="#the-internet">The Internet</a></li>
+<li><a href="#performance-measurements">Performance Measurements</a></li>
+<li><a href="#protocols">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#2-application-layer">2. Application Layer</a>
+<ul>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#process-communication">Process communication</a></li>
+<li><a href="#protocols--applications">Protocols / Applications</a></li>
+</ul>
+</li>
+<li><a href="#3-transport-layer">3. Transport Layer</a>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#flows">Flows</a></li>
+<li><a href="#protocols-1">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#4-network-layer---data-plane">4. Network Layer - Data Plane</a>
+<ul>
+<li><a href="#internet-protocol">Internet Protocol</a></li>
+<li><a href="#forwarding">Forwarding</a></li>
+<li><a href="#middle-boxes">Middle-Boxes</a></li>
+</ul>
+</li>
+<li><a href="#5-network-layer---control-plane">5. Network Layer - Control Plane</a>
+<ul>
+<li><a href="#routing">Routing</a></li>
+<li><a href="#sdn">SDN</a></li>
+<li><a href="#other-protocols">Other Protocols</a></li>
+</ul>
+</li>
+<li><a href="#6-link-layer">6. Link Layer</a>
+<ul>
+<li><a href="#services-1">Services</a></li>
+<li><a href="#multiple-access">Multiple Access</a>
+<ul>
+<li><a href="#channel-partitioning">Channel Partitioning</a></li>
+<li><a href="#random-access">Random Access</a></li>
+<li><a href="#taking-turns">Taking-Turns</a></li>
+</ul>
+</li>
+<li><a href="#definitions--protocols">Definitions &amp; Protocols</a></li>
+</ul>
+</li>
+<li><a href="#7-wireless">7. Wireless</a>
+<ul>
+<li><a href="#wireless-networks">Wireless Networks</a></li>
+<li><a href="#mobile-networks">Mobile Networks</a></li>
+<li><a href="#cell-networks-internet-access">Cell Networks Internet Access</a></li>
+</ul>
+</li>
+<li><a href="#8-security">8. Security</a>
+<ul>
+<li><a href="#network-security">Network Security</a></li>
+<li><a href="#cryptography">Cryptography</a></li>
+<li><a href="#protocols-2">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#web-request">Web Request</a></li>
+</ul>
+</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="1-networks">1. Networks</h2>
+
+<h3 class="mume-header" id="the-internet">The Internet</h3>
+
+<p>The <strong>Internet</strong> is a Network of Networkss <img src alt> <img src="Book/img/1.15.png" alt="Interconnection of ISPs"></p>
+<p>It uses <strong>Packet Switching</strong>, rather than Circuit Switching</p>
+<p>An <strong>Access Network</strong> is the network that physically connects an end system to the first router</p>
+<p>A <strong>Host</strong> / end system is a device on the edge of the network</p>
+<p>An <strong>Autonomous System</strong> (AS) is a group of networks that are connected to each other under a centralized administration.</p>
+<ul>
+<li>Models
+<ul>
+<li>5 Layer Model</li>
+<li>OSI Model : Expands app layer into 3 layers</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="performance-measurements">Performance Measurements</h3>
+
+<p><strong>Latency</strong> (time between action and reaction) is estimated through <strong>RTT</strong> (Round Trip Time)</p>
+<p>Packets may face <strong>Delay</strong> (Processing, Queuing, Transmission, Propagation ) or even <strong>Loss</strong> ( mostly from full queues )</p>
+<p><strong>Throughput</strong> is the rate at which packets are transmitted over a link</p>
+<h3 class="mume-header" id="protocols">Protocols</h3>
+
+<p>A protocol defines:</p>
+<ul>
+<li>Request and Response messages</li>
+<li>Message structure (syntaxis)</li>
+<li>Message fields (size, function, delimiters)</li>
+<li>Procedure (sending and receiving)</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="2-application-layer">2. Application Layer</h2>
+
+<blockquote>
+<p>Network applications are the raisons d&#x2019;e&#x302;tre of a computer network</p>
+</blockquote>
+<h3 class="mume-header" id="applications">Applications</h3>
+
+<p>A <strong>network application</strong> consists of pairs of processes that send messages to each other over a network,<br>
+it may have a <strong>Client-Server</strong> Architecture or a <strong>P2P</strong> Architecture.</p>
+<blockquote>
+<p>the process that initiates the communication is labeled as the <strong>client</strong></p>
+</blockquote>
+<h3 class="mume-header" id="process-communication">Process communication</h3>
+
+<p>The <strong>socket</strong> api is used to communicate.</p>
+<p>a process is identified by:</p>
+<ul>
+<li>the address of the host (ip address)</li>
+<li>process identifier in the destination host (port)</li>
+</ul>
+<blockquote>
+<p>The lower layers could provide various guarantees, such as: reliable delivery, throughput, timing and security .</p>
+</blockquote>
+<h3 class="mume-header" id="protocols-applications">Protocols / Applications</h3>
+
+<ul>
+<li>HTTP</li>
+<li>Electronic Mail</li>
+<li><strong>DNS</strong> (Domain Name System)</li>
+<li>P2P FTP</li>
+<li>Video Streaming w/ CDN</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="3-transport-layer">3. Transport Layer</h2>
+
+<blockquote>
+<p>Communication between processes</p>
+</blockquote>
+<h3 class="mume-header" id="services">Services</h3>
+
+<ul>
+<li>Must provide
+<ul>
+<li><strong>Muxing / Demuxing</strong> (of processes)</li>
+<li>Error Verification (minimal, checksum)</li>
+</ul>
+</li>
+<li>Could provide
+<ul>
+<li><strong>Reliability</strong> ( arrives . unchanged . in order )</li>
+<li>Flow control ( throttle , with an eye on the data flow )</li>
+<li>Congestion control ( throttle , with an eye on the network, share the channel equitably )</li>
+<li>Security / Safety (Privacy / Authentication / Data Integrity / etc)</li>
+</ul>
+</li>
+<li>Could provide, depending on lower layers
+<ul>
+<li>Time guarantees</li>
+<li>Throughput guarantees</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="flows">Flows</h3>
+
+<p>A <strong>flow</strong> is composed of:</p>
+<ul>
+<li>src ip</li>
+<li>src port</li>
+<li>dest ip</li>
+<li>dest port</li>
+</ul>
+<p>Types of flow (rdt):</p>
+<ul>
+<li>Stop &amp; Wait</li>
+<li><strong>Pipeline</strong>
+<ul>
+<li>Go Back N</li>
+<li>Selective Repeat</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="protocols-1">Protocols</h3>
+
+<ul>
+<li>
+<p><strong>TCP</strong> : Provides rdt &amp; flow/congestion control on top of basic services.</p>
+</li>
+<li>
+<p><strong>UDP</strong> : Provides the minimal services.</p>
+</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="4-network-layer-data-plane">4. Network Layer - Data Plane</h2>
+
+<blockquote>
+<p>Communication between hosts</p>
+</blockquote>
+<h3 class="mume-header" id="internet-protocol">Internet Protocol</h3>
+
+<p><strong>Best effort</strong> delivery of packets</p>
+<ul>
+<li><strong>IPV4</strong>:
+<ul>
+<li>Source and Destination IP addresses</li>
+<li>Total Length (Data + Header)</li>
+<li>Protocol</li>
+<li>Checksum</li>
+<li>Version IP ( 4 / 6 )</li>
+<li>Priority</li>
+<li>TTL : Time To Live ( Remaining Hops )</li>
+<li>Options</li>
+<li>Fragment Offset</li>
+<li>Packet Id</li>
+</ul>
+</li>
+<li><strong>IPV6</strong>:
+<ul>
+<li><strong>Bigger direction space</strong> <code>&#x2713;</code> (32b -&gt; 128b)</li>
+<li>Modular Header <code>&#x2717;</code></li>
+<li>No Fragmentation in network ( has to be done at ends ) <code>&#x2713;</code></li>
+<li>Auto configuration <code>~</code></li>
+<li>Differential Flow Treatment ( For QoS ) <code>&#x2717;</code></li>
+<li>No checksum ( few errors , relies on lower layers ) <code>~</code></li>
+</ul>
+</li>
+</ul>
+<p>IPV4 Header:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |Version|  IHL  |Type of Service|          Total Length         |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |         Identification        |Flags|      Fragment Offset    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Time to Live |    Protocol   |         Header Checksum       |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                       Source Address                          |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Destination Address                        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Options                    |    Padding    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+</code></pre><div class="pagebreak"> </div>
+<h3 class="mume-header" id="forwarding">Forwarding</h3>
+
+<p><strong>Forwarding</strong> : transferring a packet from an input to the appropriate output. Very fast (ns), implemented in hardware.</p>
+<p><img src alt> <img src="Book/img/4.4.png" alt="Router architecture"></p>
+<p>HOL ( Head Of Line Lock ) -&gt; When an package blocks an input queue because the corresponding output is occupied.</p>
+<ul>
+<li>Types of Switching
+<ul>
+<li>Memory Based</li>
+<li>Bus Based</li>
+<li>Crossbar Based</li>
+</ul>
+</li>
+<li>Types of Forwarding
+<ul>
+<li>Destination Based</li>
+<li><strong>Generalized</strong> (OpenFlow)
+<blockquote>
+<p>Can match multiple fields (mac, ip, port, protocol, etc) and perform actions (forward, drop, modify, etc)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>A full queue is problematic, thus packets are dropped before it happens -&gt; RED - Random Early Detection</p>
+<h3 class="mume-header" id="middle-boxes">Middle-Boxes</h3>
+
+<p>Some of these can be implemented using Generalized Forwarding</p>
+<ul>
+<li>Firewall</li>
+<li>Load Balancer</li>
+<li>NAT (Network Address Translation)</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="5-network-layer-control-plane">5. Network Layer - Control Plane</h2>
+
+<blockquote>
+<p>The network-wide logic that controls communication between hosts and network configuration/management</p>
+</blockquote>
+<h3 class="mume-header" id="routing">Routing</h3>
+
+<p><strong>Routing</strong> : the network-wide process that determines the end-to-end paths that packets take from source to destination. Slow (s), implemented in software.</p>
+<ul>
+<li>
+<p>Classification</p>
+<ul>
+<li>distributed / centralized (sdn)</li>
+<li>static / dynamic</li>
+<li>traffic dependent / independent</li>
+</ul>
+</li>
+</ul>
+<ul>
+  <li>Routing Algorithms</li>
+<ul style="padding-left: 1.2em">
+  <details><summary>
+  Link State Routing (LS)
+  </summary>
+  Centralized, the network topology and all link costs are known (link-state broadcast algorithm);
+  each node performs shortest path computation to all others (Dijkstra)
+  </details>
+  <details><summary>
+  Distance Vector Routing (DV)
+  </summary>
+  Decentralized, each node begins with only the knowledge of the costs of its own directly attached links;
+  the calculation of the least-cost path is carried out in an iterative, distributed manner by the routers.
+  Each node maintains a vector of estimates of the costs (distances) to all other nodes in the network,
+  nodes share their vectors, use Bellman-Ford and converge to the shortest path (more or less).
+  </details>
+</ul></ul>
+<ul>
+  <li>Intra-AS Routing Protocols</li>
+<ul style="padding-left: 1.2em">
+  <details><summary>
+  Routing Information Protocol (RIP)
+  </summary>
+  DV Protocol.
+  Prevents loops by implementing max hops
+  </details>
+  <details><summary>
+  Open Shortest Path First (OSPF)
+  </summary>
+  LS Protocol.
+  Nodes broadcast to all other nodes, not just neighbors;
+  periodically, even if the state is unchanged, which adds robustness.
+  It supports some additional features:
+<ul>
+<li>Security (authentication)</li>
+<li>Multiple same-cost paths</li>
+<li>Hierarchy within a single AS (configured as bordering areas)</li>
+<li>Multicast OSPF (MOSPF) provides simple extensions to OSPF to provide for multicast routing</li></ul></details>
+
+</ul>
+</ul>
+<ul>
+  <li>Inter-AS Routing Protocol</li>
+<ul style="padding-left: 1.2em">
+  <details><summary>
+  Border Gateway Protocol (BGP)
+  </summary>
+<ul>
+<li>
+<p>Only one to operate between AS, can also be used internally</p>
+</li>
+<li>
+<p>Neither link-state nor list-vector, but uses methods from both</p>
+</li>
+<li>
+<p>Functioning</p>
+<ul>
+<li>grabs its routing table and sends it to its neighbors ( similar to rip )</li>
+<li>avoids loops by using <code>AS_path</code> &amp; discarding entries where the self AS is included</li>
+<li>no flooding, signals updates on significant changes / depending on policies</li>
+</ul>
+</li>
+<li>
+<p>Can save multiple entries for a single destination</p>
+<ul>
+<li>marks one entry as the one in use</li>
+<li>saves more alternatives in the case its next hop disconnects to not wait for the protocol to re-run until it converges</li>
+</ul>
+</li>
+<li>
+<p>Can have LP ( Local Preferences ) like weights/etc, useful for local use</p>
+</li>
+<li>
+<p>traffic engineering</p>
+<ul>
+<li>as_path prepend: adds the self ass_path many times to make the entry larger and reduce its priority (backup)</li>
+</ul>
+</li>
+<li>
+<p><strong>Anycast</strong>: announces a single ip of a whole prefix (mask), multiple hosts have that ip</p>
+</li>
+<li>
+<p>Policies</p>
+<ul>
+<li>transit: only announce routes of clients</li>
+<li>peer to peer is only announced downwards, not upwards (to providers)</li>
+</ul>
+</li>
+<li>
+<p><strong>manrs</strong> : Mutually Agreed Norms for Routing Security -&gt; see ppt</p>
+</li></ul></details>
+
+</ul>
+</ul>
+<blockquote>
+<p>Separating routing in Intra/Inter AS is key due to <strong>Scale</strong> and <strong>Administrative Autonomy</strong><br>
+Trying to centralize all routers would be imposible.<br>
+RIP &amp; OSPF work automatically. BGP needs some configuration ( specially for providers, consumers not so much )</p>
+</blockquote>
+<h3 class="mume-header" id="sdn">SDN</h3>
+
+<p>The first routers ran their routing protocol ( generating routing table )</p>
+<ul>
+<li>Flow-based forwarding</li>
+<li>Separation of data plane and control plane</li>
+<li>Network control functions: external to data-plane switches</li>
+<li>A programmable network</li>
+</ul>
+<h3 class="mume-header" id="other-protocols">Other Protocols</h3>
+
+<ul>
+<li>ICMP (Internet Control Message Protocol)</li>
+<li>SNMP (Simple Network Management Protocol)</li>
+<li>DHCP (Dynamic Host Configuration Protocol)
+<ul>
+<li>DHCPDISCOVER , DHCPOFFER , DHCPREQUEST , DHCPACK</li>
+</ul>
+</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="6-link-layer">6. Link Layer</h2>
+
+<blockquote>
+<p>how packets are sent across the individual links that make up the end-to-end communication path</p>
+</blockquote>
+<h3 class="mume-header" id="services-1">Services</h3>
+
+<ul>
+<li><strong>Framing</strong></li>
+<li>Link Access (MAC)</li>
+<li>Reliable Transfer
+<ul>
+<li>slow and hardly implemented as transfer media is pretty reliable nowadays</li>
+<li>most wireless devices do something to this end</li>
+</ul>
+</li>
+<li><strong>Error detection and correction</strong>
+<blockquote>
+<p>As a rule of thumb, the number of bits that can be corrected is half of what can be detected</p>
+</blockquote>
+<ul>
+<li>Parity Verification
+<ul>
+<li>uni/bi dimensional</li>
+<li>Not really used, not good enough</li>
+</ul>
+</li>
+<li><strong>CRC</strong> ( Cyclic Redundancy Check )
+<ul>
+<li>Link Layer err handling is CRC or better</li>
+<li>Adds very little overhead and increases reliability a lot (eg. wireless: +1% err , x10e-5 BER)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="multiple-access">Multiple Access</h3>
+
+<ul>
+<li>Channels can be point-to-point (PPP) or multiple access</li>
+<li>Broadcasting Media ( Diffusion )</li>
+<li>Security Issues, everything is listened by everyone</li>
+</ul>
+<h4 class="mume-header" id="channel-partitioning">Channel Partitioning</h4>
+
+<p>Deterministic but limits transmission rates</p>
+<ul>
+<li>TDM : Time Division Multiplexing</li>
+<li>FDM : Frequency Division Multiplexing</li>
+<li>CDM : Code Division Multiplexing</li>
+</ul>
+<div class="pagebreak"> </div>
+<h4 class="mume-header" id="random-access">Random Access</h4>
+
+<ul>
+<li>ALOHA / Slotted ALOHA</li>
+<li>CSMA (Carrier Sense Multiple Access)
+<ul>
+<li>CS: Don&apos;t speak if someone else is speaking</li>
+<li>CSMA/CD (Collision Detection)
+<ul>
+<li>Detects collisions</li>
+<li>Cabled MA, where everyone hears everything</li>
+</ul>
+</li>
+<li>CSMA/CA (Collision Avoidance)
+<ul>
+<li>Wireless MA, hosts may not hear another (hidden agent)</li>
+<li>Access point acknowledges messages (ack slot)</li>
+<li>Request to Send (RTS) / Clear to Send (CTS)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="taking-turns">Taking-Turns</h4>
+
+<ul>
+<li>Centralized</li>
+<li>Token Ring (Decentralized)
+<ul>
+<li>High Utilization ( almost 100% )</li>
+<li>If a host disconnects the ring needs to be rebuilt</li>
+<li>died because it was too expensive</li>
+<li>Max Token Time, Host Number -&gt; Thus Max wait time is known -&gt; Good for Real Time</li>
+</ul>
+</li>
+<li>Token Bus (Decentralized)
+<ul>
+<li>Builds on Token Ring using Ethernet&apos;s cheap technology</li>
+<li>Its troublesome when the token bearer dies</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="definitions-protocols">Definitions &amp; Protocols</h3>
+
+<ul>
+<li>
+<p>ARP (Address Resolution Protocol)</p>
+<ul>
+<li>IP to MAC</li>
+</ul>
+</li>
+<li>
+<p>Ethernet</p>
+</li>
+<li>
+<p>Wifi</p>
+<ul>
+<li>CSMA/CA</li>
+<li>Active/Passive Discovery</li>
+<li>Adapts to the env SNR, energy saving</li>
+</ul>
+</li>
+<li>
+<p>Token Ring &amp; Token Bus</p>
+</li>
+<li>
+<p>LAN</p>
+<ul>
+<li>Local Area Network (small scale)</li>
+<li>a broadcast reaches all hosts</li>
+<li>many hosts with a shared medium</li>
+<li>VLAN (Virtual LAN)
+<ul>
+<li>Logically separated LAN&apos;s</li>
+<li>Separated by Switches</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>MPLS (Multi Protocol Label Switching)</p>
+<ul>
+<li>used for traffic engineering</li>
+</ul>
+</li>
+</ul>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="7-wireless">7. Wireless</h2>
+
+<h3 class="mume-header" id="wireless-networks">Wireless Networks</h3>
+
+<blockquote>
+<p>Wireless LAN&apos;s (Wifi) and Mobile Broadband&apos;s (3G,4G,etc)</p>
+</blockquote>
+<ul>
+<li>Physical Media Characteristics
+<ul>
+<li><strong>Potency</strong> &amp; Attenuation
+<ul>
+<li>Signal strength is lost over distance</li>
+<li>Also, reflection may cause shifted waves to cancel or attenuate the signal</li>
+</ul>
+</li>
+<li>Interference
+<ul>
+<li>from other sources</li>
+<li>Multipath propagation</li>
+</ul>
+</li>
+<li>Dependencia del tipo de modulaci&#xF3;n y el BER (???)</li>
+</ul>
+</li>
+<li>Measurements
+<ul>
+<li><strong>BER</strong> ( Bit Error Rate )
+<ul>
+<li>ErredBits / TotalTransmittedBits</li>
+<li>Wireless BER = 10e-3 -&gt; 10e-5 (now)</li>
+<li>Optic Fiber BER = 10e-9 ( 1 erred bit in 100MB )</li>
+</ul>
+</li>
+<li><strong>SNR</strong> ( Signal to Noise Ratio )</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="mobile-networks">Mobile Networks</h3>
+
+<p>ip is not adapted to mobility; cellular tech was,<br>
+and extending it was most cost effective than other alternatives ( like wifi-max ) , in particular , handover was a concern that it was designed for.</p>
+<p><strong>Agents</strong></p>
+<ul>
+<li>Mobile Agent</li>
+<li>Home Agent</li>
+<li>Foreign Agent</li>
+</ul>
+<p><strong>Addressing</strong></p>
+<ul style="padding-left: 1.2em">
+  <details><summary>
+  Indirect
+  </summary>
+<p><img src="Book/img/7.26.png" alt="Indirect Routing"></p>
+  </details>
+  <details><summary>
+  Direct
+  </summary>
+<ul>
+<li>
+<p>A mobile-user location protocol is needed<br>
+for the FA to query the HA to obtain the MA&apos;s COA</p>
+</li>
+<li>
+<p>How to handle when the mobile node moves from one foreign network to another ( the HA is queried for the COA only at the beginning of the session)</p>
+</li></ul></details>
+<details><summary>
+Transfer
+</summary>
+<p><img src="Book/img/7.27.png" alt="Transfer Routing"></p>
+</details>
+
+</ul>
+
+<blockquote>
+<p>COA : Care of Address, the address of the mobile agent known to the foreign agent</p>
+</blockquote>
+<p><strong>Mobility</strong></p>
+<ul>
+<li>Handoffs / Handover</li>
+<li>Rerouting</li>
+</ul>
+<div class="pagebreak"> </div>
+<h3 class="mume-header" id="cell-networks-internet-access">Cell Networks Internet Access</h3>
+
+<p>Cell towers have a grid-like disposition (hexagons) where there is some overlap between coverage regions,<br>
+to avoid interference regions have 6 areas w/ different frequencies between neighboring ones.</p>
+<p><img src alt><br>
+<img src="Book/img/7.18.png" alt="2G Architecture"><br>
+<img src="Book/img/7.19.png" alt="3G Architecture"></p>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="8-security">8. Security</h2>
+
+<h3 class="mume-header" id="network-security">Network Security</h3>
+
+<ul>
+<li>Confidentiality
+<ul>
+<li>Only the sender and receiver should understand the message</li>
+<li>Solved through encryption</li>
+</ul>
+</li>
+<li>Message integrity
+<ul>
+<li>Messages should be unaltered</li>
+<li>Solved through hashing</li>
+</ul>
+</li>
+<li>End-point authentication
+<ul>
+<li>both paries should be able to confirm the identity of the other party</li>
+<li>Solved through signing</li>
+</ul>
+</li>
+<li>Operational security</li>
+</ul>
+<h3 class="mume-header" id="cryptography">Cryptography</h3>
+
+<p><strong>Concepts</strong></p>
+<ul>
+<li>plaintext / cyphertext</li>
+</ul>
+<p><strong>Encryption</strong></p>
+<ul>
+<li>Symmetric Key Cryptography
+<ul>
+<li>Block Ciphers ( DES , 3DES , AES )</li>
+</ul>
+</li>
+<li>Asymmetric Key Cryptography
+<ul>
+<li>Public Key Cryptography ( RSA )</li>
+</ul>
+</li>
+</ul>
+<p><strong>Integrity</strong></p>
+<ul>
+<li>Cryptographic Hash Functions
+<ul>
+<li>MD5 , SHA1 , SHA256 , SHA512</li>
+</ul>
+</li>
+<li>Signatures
+<ul>
+<li>RSA</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A message might append a hash, and a signature of the hash to ensure integrity,<br>
+Since a signature of the whole message would be too big / resource consuming.</p>
+</blockquote>
+<p><strong>Public Key Certification</strong></p>
+<ul>
+<li>Certificate Authority ( CA )</li>
+<li>We trust a CA to verify the authenticity of a Public Key</li>
+</ul>
+<div class="pagebreak"> </div>
+<p><strong>Authentication</strong></p>
+<pre data-role="codeBlock" data-info class="language-"><code>1. Alice sends the message &#x201C;I am Alice&#x201D; to Bob.
+2. Bob chooses a nonce, R, and sends it to Alice.
+3. Alice encrypts the nonce using Alice and Bob&#x2019;s symmetric secret key, KA&#x2212;B,
+   and sends the encrypted nonce, KA&#x2212;B(R), back to Bob,
+   which lets Bob know that the message was generated by Alice.
+   The nonce is used to ensure that Alice is live.
+4. Bob decrypts the received message.
+   If the decrypted nonce equals the nonce he sent Alice,
+   then Alice is authenticated.
+</code></pre><blockquote>
+<p>The symmetric key is shared using a secure channel first<br>
+Commonly relying on assymmetric encryption</p>
+</blockquote>
+<h3 class="mume-header" id="protocols-2">Protocols</h3>
+
+<ul>
+<li>PGP ( Pretty Good Privacy )
+<ul>
+<li>e-mail encryption scheme</li>
+</ul>
+</li>
+<li>Secure Sockets Layer (SSL)</li>
+<li>Transport Layer Security (TLS) [modified ssl]</li>
+</ul>
+<p><img src alt> <img src="Book/img/8.25.png" alt="Almost SSL"></p>
+<div class="pagebreak"> </div>
+<h2 class="mume-header" id="web-request">Web Request</h2>
+
+<ul>
+<li>HTTP (app)
+<blockquote>
+<p>We want to make an http request to a certain domain.<br>
+We need its IP ( port 80 by convention )</p>
+</blockquote>
+</li>
+<li>DNS (app)
+<blockquote>
+<p>We want to make a request to the local dns server.<br>
+eg. 8.8.8.8</p>
+</blockquote>
+</li>
+<li>UDP (transport)
+<blockquote>
+<p>The dns request is wrapped in a udp packet</p>
+</blockquote>
+</li>
+<li>IP (network)
+<blockquote>
+<p>The udp packet is wrapped in a ip packet</p>
+</blockquote>
+</li>
+<li>ROUTING (network)
+<blockquote>
+<p>The destination is routed,<br>
+it needs to be sent to the default gateway,<br>
+we need its mac address</p>
+</blockquote>
+</li>
+<li>ARP (link)
+<blockquote>
+<ul>
+<li>dst_mac : Broadcast</li>
+<li>dst_ip : NextHop (gateway)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#computer-networking">Computer Networking</a>
+<ul>
+<li><a href="#1-networks">1. Networks</a>
+<ul>
+<li><a href="#the-internet">The Internet</a></li>
+<li><a href="#performance-measurements">Performance Measurements</a></li>
+<li><a href="#protocols">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#2-application-layer">2. Application Layer</a>
+<ul>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#process-communication">Process communication</a></li>
+<li><a href="#protocols-applications">Protocols / Applications</a></li>
+</ul>
+</li>
+<li><a href="#3-transport-layer">3. Transport Layer</a>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#flows">Flows</a></li>
+<li><a href="#protocols-1">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#4-network-layer-data-plane">4. Network Layer - Data Plane</a>
+<ul>
+<li><a href="#internet-protocol">Internet Protocol</a></li>
+<li><a href="#forwarding">Forwarding</a></li>
+<li><a href="#middle-boxes">Middle-Boxes</a></li>
+</ul>
+</li>
+<li><a href="#5-network-layer-control-plane">5. Network Layer - Control Plane</a>
+<ul>
+<li><a href="#routing">Routing</a></li>
+<li><a href="#sdn">SDN</a></li>
+<li><a href="#other-protocols">Other Protocols</a></li>
+</ul>
+</li>
+<li><a href="#6-link-layer">6. Link Layer</a>
+<ul>
+<li><a href="#services-1">Services</a></li>
+<li><a href="#multiple-access">Multiple Access</a>
+<ul>
+<li><a href="#channel-partitioning">Channel Partitioning</a></li>
+<li><a href="#random-access">Random Access</a></li>
+<li><a href="#taking-turns">Taking-Turns</a></li>
+</ul>
+</li>
+<li><a href="#definitions-protocols">Definitions &amp; Protocols</a></li>
+</ul>
+</li>
+<li><a href="#7-wireless">7. Wireless</a>
+<ul>
+<li><a href="#wireless-networks">Wireless Networks</a></li>
+<li><a href="#mobile-networks">Mobile Networks</a></li>
+<li><a href="#cell-networks-internet-access">Cell Networks Internet Access</a></li>
+</ul>
+</li>
+<li><a href="#8-security">8. Security</a>
+<ul>
+<li><a href="#network-security">Network Security</a></li>
+<li><a href="#cryptography">Cryptography</a></li>
+<li><a href="#protocols-2">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#web-request">Web Request</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
